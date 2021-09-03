@@ -1,0 +1,30 @@
+@use "../../presets" as *;
+@use "../../mixins" as *;
+
+.form {
+  position: relative;
+  height: 120px;
+  background-color: $color-primary;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  &__container {
+    display: inline-grid;
+    gap: $gap;
+    max-width: 1340px;
+    margin: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  &-input {
+    min-height: 60px;
+    min-width: 420px;
+  }
+}
+
+
+.delite {
+  position: relative;
+  height: 100vh;
+}
