@@ -3,6 +3,7 @@
 
 .skill-item {
   position: relative;
+
   overflow: hidden;
 
   &:hover {
@@ -15,7 +16,9 @@
     }
 
     & .skill-item__overlay {
-      opacity: 0.95;
+      transition: opacity 0.5s;
+      opacity: 0.8;
+      background-color: $color-primary;
     }
   }
 

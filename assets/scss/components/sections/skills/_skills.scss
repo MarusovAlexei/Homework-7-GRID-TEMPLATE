@@ -1,11 +1,10 @@
 @use "../../../mixins" as *;
 @use "../../../presets" as *;
 
-
 .skills {
   @include sm-min {
-    margin-bottom: 30px;
-    padding: 10px;
+    margin-bottom: $gap-lg;
+    padding: $gap-sm;
   }
   @include sm {
     padding: $gap;
@@ -16,44 +15,48 @@
 
     margin-bottom: $gap;
 
-    gap: 10px;
+    gap: $gap-sm;
     @include lg-min {
-      gap: 10px;
-      grid-template-areas: "a1 a1 a2 a3"
-      "a4 a5 a5 a6"
-      "a7 a8 a9 a6";
+      gap: $gap-sm;
+      grid-template-areas:
+        "a1 a1 a2 a3"
+        "a4 a5 a5 a6"
+        "a7 a8 a9 a6";
       grid-template-columns: repeat(4, 1fr);
     }
     @include lg-md {
-      gap: 10px;
-      grid-template-areas: "a1 a1 a2"
-      "a3 a4 a4"
-      "a5 a5 a6"
-      "a7 a8 a6"
-      "a7 a9 a9";
+      gap: $gap-sm;
+      grid-template-areas:
+        "a1 a1 a2"
+        "a3 a4 a4"
+        "a5 a5 a6"
+        "a7 a8 a6"
+        "a7 a9 a9";
       grid-template-columns: repeat(3, 1fr);
     }
     @include md-sm {
-      gap: 10px;
-      grid-template-areas: "a1 a2"
-      "a3 a2"
-      "a4 a4"
-      "a5 a6"
-      "a5 a7"
-      "a8 a9";
+      gap: $gap-sm;
+      grid-template-areas:
+        "a1 a2"
+        "a3 a2"
+        "a4 a4"
+        "a5 a6"
+        "a5 a7"
+        "a8 a9";
       grid-template-columns: repeat(2, 1fr);
     }
     @include sm {
       gap: $gap;
-      grid-template-areas: "a1"
-      "a2"
-      "a3"
-      "a4"
-      "a5"
-      "a6"
-      "a7"
-      "a8"
-      "a9";
+      grid-template-areas:
+        "a1"
+        "a2"
+        "a3"
+        "a4"
+        "a5"
+        "a6"
+        "a7"
+        "a8"
+        "a9";
       grid-template-columns: 1fr;
     }
 

@@ -1,70 +1,160 @@
-@use "../../presets" as *;
 @use "../../mixins" as *;
+@use "../../presets" as *;
 
 .about {
-  letter-spacing: 0.055em;
   background-color: $color-gray-light;
-  padding-top: 100px;
-  padding-bottom: 82px;
+  letter-spacing: 0.055rem;
 
+  @include lg-min {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include lg-md {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @include md {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 
   &__container {
-    display: grid;
-    grid-template-columns: 1fr 271px;
-    gap: 100px;
-    max-width: 1340px;
-    margin: auto;
-    padding-right: 20px;
-    padding-left: 20px;
+    display: flex;
+    padding-left: $gap;
+    @extend %container;
+
+    @include lg-min {
+      gap: 100px;
+      justify-content: flex-start;
+    }
+
+    @include lg-md {
+      align-items: flex-start;
+      gap: 40px;
+    }
+
+    @include md-sm {
+      gap: $gap;
+    }
+
+    @include sm {
+      gap: $gap;
+      flex-direction: column;
+    }
   }
 
   &__content {
-    max-width: 929px;
-    position: relative;
-
-    h2 {
-      font-size: 40px;
-      font-family: $font-header;
-      font-weight: 700;
-      letter-spacing: 4px;
-      line-height: 48px;
-      color: $color-primary;
-      margin-bottom: 43px;
-      margin-top: 0;
+    @include md-sm {
+      justify-content: space-between;
+      width: 65%;
     }
 
-    p {
-      margin-top: 18px;
-      line-height: 1.15;
-      color: $color-gray;
-      font-weight: 400;
-      font-family: $font-main;
-      font-size: 18px;
-      letter-spacing: 0.0489em;
+    @include lg-md {
+      width: 67%;
+      justify-content: space-between;
     }
-
   }
 
-  &__content::after {
-    position: absolute;
-    top: 139px;
-    right: -50px;
-    width: 2px;
-    height: 200px;
-    content: "";
-    background-color: rgba(99, 117, 136, 0.1);
+  &__content p:last-of-type {
+    margin: 0;
+  }
+
+  &__content p {
+    position: relative;
+
+    @include lg-min {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__content h2 {
+    @include lg-md {
+      margin-bottom: 2.625rem;
+    }
+    @include md {
+      margin-bottom: 2.25rem;
+    }
+  }
+
+  &__content p:first-of-type {
+    position: relative;
+    @include lg-min {
+      margin: -5px 0 18px 0;
+    }
+
+    @include lg {
+      margin: -5px 0 16px 0;
+    }
+  }
+
+  &__content p:first-of-type::after {
+    @include lg-min {
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 200px;
+      right: -50px;
+      background-color: rgb(112, 112, 112, 0.1);
+      content: "";
+    }
+
+    @include lg-md {
+      right: -$gap;
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 200px;
+      background-color: rgb(112, 112, 112, 0.1);
+      content: "";
+    }
+
+    @include md {
+      right: -10px;
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 200px;
+      background-color: rgb(112, 112, 112, 0.1);
+      content: "";
+    }
+
+    @include sm {
+      display: none;
+    }
   }
 
   &__image {
-    display: grid;
+    margin-left: auto;
+    margin-right: auto;
     align-items: center;
     justify-content: center;
-    max-width: 271px;
-    max-height: 491px;
+    display: flex;
 
-    img {
-      max-width: 266.55px;
-      max-height: 480px;
+    @include lg-min {
+      width: 46.5%;
+      max-height: 480px; /*488*/
+      min-width: 271px;
     }
+
+    @include lg-md {
+      width: 27%;
+      min-height: 480px;
+      min-width: 267px;
+      padding-top: 10px;
+    }
+
+    @include md-sm {
+      width: 32.5%;
+      min-height: 425px;
+      min-width: 236px;
+    }
+  }
+
+  &__image img {
+    display: block;
+    max-width: 100%;
+    max-height: 480px;
   }
 }
